@@ -27,8 +27,8 @@ int solve(void) {
 	int ans = 0;
 
 	// 棒を重複して選ばないように x < y < z とする
-	for (int x = 0; x < n; ++x) {
-		for (int y = x + 1; y < n; ++y) {
+	for (int x = 0; x < n - 2; ++x) {
+		for (int y = x + 1; y < n - 1; ++y) {
 			for (int z = y + 1; z < n; ++z) {
 				int len = a[x] + a[y] + a[z];  // 周長
 				int max_len = std::max(a[x], std::max(a[y], a[z]));  // 最大の辺
