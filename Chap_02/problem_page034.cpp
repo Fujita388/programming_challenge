@@ -24,7 +24,7 @@ int main() {
 // iまででsumを作って、残りi以降を調べる
 bool dfs(int i, int sum) {
 	// n個決め終わったら、今までの和sumがkと等しいかを返す
-	if (i == n)  // 終端条件
+	if (i == n)  
 		return sum == k;
 	// a[i]を使わない場合
 	if (dfs(i + 1, sum))
