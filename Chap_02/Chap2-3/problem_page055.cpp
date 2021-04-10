@@ -10,10 +10,10 @@ int dp[MAX_N + 1][MAX_W + 1];  // DPテーブル(0で初期化されている)
 
 
 void solve() {
-	for (int i = n - 1; i >= 0; --i) {
+	for (int i = n - 1; i >= 0; --i) { // dp[i][]にはdp[i+1][]が必要
 		for (int j = 0; j <= W; ++j) {
 			if (j < w[i]) 
-				dp[i][j] = dp[i + 1][j];  // dp[i][]にはdp[i+1][]が必要
+				dp[i][j] = dp[i + 1][j];  
 			else 
 				dp[i][j] = std::max(dp[i + 1][j], dp[i + 1][j - w[i]] + v[i]);
 		}
